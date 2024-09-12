@@ -52,7 +52,7 @@ export const authOptions = {
                 console.error(e);
             }
 
-            return null
+            return null ;
           },
         })
     ],
