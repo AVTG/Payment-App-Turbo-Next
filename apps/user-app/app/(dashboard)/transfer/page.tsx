@@ -32,20 +32,6 @@ async function getOnRampTransactions() {
     provider: t.provider,
   }));
 }
-async function onClick() {
-  const session = await getServerSession(authOptions) ;
-  const userId = Number(session?.user?.id)
-  db.onRampTransaction.create({
-    data: {
-      startTime: new Date(),
-      status: "Processing",
-      amount: 20000,
-      token: "122",
-      provider: "HDFC Bank",
-      userId: userId
-    },
-  });
-}
 
 export default async function () {
   const balance = await getBalance();

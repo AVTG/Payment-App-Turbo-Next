@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div>
-      <Appbar onSignin={signIn} onSignout={signOut} user ={sessionStorage.user?.data} />
+      <Appbar onSignin={signIn} onSignout={signOut} user ={session?.data?.user} />
     </div>
   );
 }

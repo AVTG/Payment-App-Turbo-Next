@@ -28,8 +28,8 @@ export const AddMoney = () => {
             Bank
         </div>
         <Select onSelect={(value) => {
-            setAmount(value)
             setRedirectUrl(SUPPORTED_BANKS.find(x => x.name === value)?.redirectUrl || "")
+            setProvider(SUPPORTED_BANKS.find(x => x.name === value)?.name || "")
         }} options={SUPPORTED_BANKS.map(x => ({
             key: x.name,
             value: x.name
