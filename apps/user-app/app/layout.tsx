@@ -32,7 +32,6 @@ export default function RootLayout({
           </div>
         </body>
       </Providers>
-      
     </html>
   );
 }
