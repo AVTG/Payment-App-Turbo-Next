@@ -1,0 +1,23 @@
+{
+  "name": "@repo/database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:generate": "npx prisma generate",
+    "db:push": "npx prisma db push --skip-generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.19.1"
+  },
+  "exports": {
+    "./client": "./index.ts"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
