@@ -1,6 +1,7 @@
 import db from "@repo/database/client";
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcrypt";
+import { NextResponse } from "next/server";
 
 
 export const authOptions = {
