@@ -2,6 +2,7 @@ import db from "@repo/database/client";
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
+import { redirect } from "next/navigation";
 
 
 export const authOptions = {
@@ -71,7 +72,7 @@ export const authOptions = {
             return session
         },
         async redirect() {
-            return process.env.NEXTAUTH_URL + "/dashboard";
+            return redirect("/dashboard") ;
         }
     }
 }
