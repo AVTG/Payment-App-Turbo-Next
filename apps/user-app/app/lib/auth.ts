@@ -1,8 +1,6 @@
 import db from "@repo/database/client";
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcrypt";
-import { NextResponse } from "next/server";
-import { usePathname } from "next/navigation";
 
 
 export const authOptions = {
@@ -71,9 +69,6 @@ export const authOptions = {
             session.user.id = token.sub
             return session
         },
-        async redirect() {
-            const pathname = usePathname() ;
-            return pathname + "/dashboard";
-        }
+        
     }
 }

@@ -5,10 +5,10 @@ import { redirect } from "next/navigation";
 // app/page.tsx
 export default async function HomePage() {
   const session = await getServerSession(authOptions) ;
-  if(!session?.user){
-    redirect("api/auth/signin") ;
+  if(session?.user){
+    redirect("/dashboard") ;
   }
   else{
-    redirect("/dashboard") ;
+    redirect("api/auth/signin") ;
   }
 }
