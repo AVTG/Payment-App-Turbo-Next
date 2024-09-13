@@ -3,8 +3,8 @@ import { authOptions } from "./lib/auth";
 import { redirect } from "next/navigation";
 
 // app/page.tsx
-export default function HomePage() {
-  const session = getServerSession(authOptions) ;
+export default async function HomePage() {
+  const session = await getServerSession(authOptions) ;
   if(!session?.user){
     redirect(process.env.NEXTAUTH_URL+ "/api/auth/signin") ;
   }
