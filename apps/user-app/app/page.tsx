@@ -10,6 +10,5 @@ export default async function HomePage() {
   }
   else{
     redirect("/dashboard") ;
-
   }
 }
