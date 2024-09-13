@@ -5,11 +5,10 @@ import { OnRampTransactions } from "../../../components/OnRampTransaction";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../lib/auth";
 
-async function getBalance() {
-  const session = await getServerSession(authOptions);
+async function getBalance(userId:string) {
   const balance = await db.balance.findFirst({
     where: {
-      userId: Number(session?.user?.id),
+      userId: Number(userId),
     },
   });
   return {
@@ -34,7 +33,13 @@ async function getOnRampTransactions() {
 }
 
 export default async function () {
-  const balance = await getBalance();
+  const session = await getServerSession(authOptions);
+  
+
+
+  if(!session?.user) return <div>Please login first</div>
+  const userId = session?.user.id
+  const balance = await getBalance(userId);
   const transactions = await getOnRampTransactions();
 
   return (
