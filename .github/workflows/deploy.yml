@@ -39,4 +39,4 @@ jobs:
           sudo docker pull avtg01/banker-solutions:latest
           sudo docker stop banker-solutions || true
           sudo docker rm banker-solutions || true
-          sudo docker run -d --name banker-solutions -p 3005:3000 avtg01/banker-solutions:latest
+          sudo docker run -d --name banker-solutions -p 3000:3000 avtg01/banker-solutions:latest
